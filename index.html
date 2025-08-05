@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="StrategyHub - Building professional Bitcoin infrastructure, fostering technical collaboration, and creating spaces for serious Bitcoin strategy development and institutional engagement.">
-    <meta name="keywords" content="Bitcoin, Strategy, Infrastructure, Professional, Content Creation, Studio">
+    <meta name="description" content="StrategyHub - Building Bitcoin infrastructure, fostering technical collaboration, and creating spaces for serious Bitcoin development.">
+    <meta name="keywords" content="Bitcoin, Strategy, Infrastructure, Content Creation, Studio">
     <meta name="author" content="StrategyHub">
-    <meta property="og:title" content="Hub₿ - Bitcoin Strategy & Infrastructure">
-    <meta property="og:description" content="Professional Bitcoin infrastructure and strategic collaboration spaces for serious Bitcoin development.">
+    <meta property="og:title" content="StrategyHub - Bitcoin Infrastructure Hub">
+    <meta property="og:description" content="Building Bitcoin infrastructure and fostering technical collaboration.">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Hub₿ - Bitcoin Strategy & Infrastructure">
-    <meta name="twitter:description" content="Professional Bitcoin infrastructure and strategic collaboration spaces.">
+    <meta name="twitter:title" content="StrategyHub - Bitcoin Infrastructure Hub">
+    <meta name="twitter:description" content="Building Bitcoin infrastructure and fostering technical collaboration.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>₿</text></svg>">
-    <title>Hub₿ - Bitcoin Strategy & Infrastructure</title>
+    <title>StrategyHub - Bitcoin Infrastructure Hub</title>
     <style>
         * {
             margin: 0;
@@ -31,8 +31,8 @@
         
         .hero {
             position: relative;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
-            color: #ffffff;
+            background: linear-gradient(135deg, #fff5e6 0%, #ffeaa7 25%, #fdcb6e 50%, #e17055 75%, #d63031 100%);
+            color: #111111;
             padding: 8rem 0 6rem;
             text-align: center;
             overflow: hidden;
@@ -46,8 +46,8 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 80%, rgba(247, 147, 26, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(247, 147, 26, 0.08) 0%, transparent 50%);
+                radial-gradient(circle at 20% 80%, rgba(247, 147, 26, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(247, 147, 26, 0.03) 0%, transparent 50%);
             pointer-events: none;
         }
         
@@ -59,59 +59,31 @@
             z-index: 1;
         }
         
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #f7931a 0%, #ffb84d 50%, #f7931a 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 0 30px rgba(247, 147, 26, 0.3);
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
         }
         
-        .bitcoin-symbol {
-            font-family: 'Times New Roman', serif;
-            font-size: 0.7em;
-            vertical-align: super;
-            position: relative;
-            top: -0.1em;
-            color: #f7931a !important;
-            -webkit-text-fill-color: #f7931a !important;
-            background: none !important;
-            text-shadow: none !important;
-        }
-        
-        /* Reduce animations on mobile and for users who prefer reduced motion */
-        @media (max-width: 768px), (prefers-reduced-motion: reduce) {
-            .studio-highlight::before {
-                animation: none;
-            }
-            
-            .card:hover {
-                transform: translateY(-4px);
-            }
-            
-            .btn:hover {
-                transform: translateY(-1px);
-            }
+        .logo-img {
+            height: 80px;
+            width: auto;
         }
         
         .hero .tagline {
             font-size: 1.5rem;
-            font-weight: 500;
-            opacity: 0.8;
+            font-weight: 600;
             margin-bottom: 2rem;
-            color: #666666;
+            color: #222222;
         }
         
         .hero .mission {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 3rem;
-            opacity: 0.7;
             line-height: 1.7;
-            color: #555555;
+            color: #333333;
         }
         
         .section {
@@ -375,13 +347,28 @@
             color: #f7931a;
         }
         
+        /* Reduce animations on mobile and for users who prefer reduced motion */
+        @media (max-width: 768px), (prefers-reduced-motion: reduce) {
+            .studio-highlight::before {
+                animation: none;
+            }
+            
+            .card:hover {
+                transform: translateY(-4px);
+            }
+            
+            .btn:hover {
+                transform: translateY(-1px);
+            }
+        }
+        
         @media (max-width: 768px) {
             .hero {
                 padding: 6rem 0 4rem;
             }
             
-            .hero h1 {
-                font-size: 2.8rem;
+            .logo-img {
+                height: 60px;
             }
             
             .hero .tagline {
@@ -522,7 +509,7 @@
 
     <div class="section">
         <div class="container">
-            <div class="studio-highlight">
+            <div class="studio-highlight" style="max-width: 500px; margin: 4rem auto;">
                 <h3>Broadcast-Quality Studio</h3>
                 <p>
                     4K video, multi-input audio, and acoustic treatment for Bitcoin content creation. 
@@ -549,7 +536,7 @@
             <div class="footer-content">
                 <div>
                     <h4>StrategyHub</h4>
-                    <p style="color: #666; margin-top: 1rem; line-height: 1.6;">Building professional Bitcoin infrastructure and fostering strategic collaboration in the Bitcoin ecosystem.</p>
+                    <p style="color: #666; margin-top: 1rem; line-height: 1.6;">Building Bitcoin infrastructure and fostering technical collaboration in the Bitcoin ecosystem.</p>
                 </div>
                 <div>
                     <h4>Resources</h4>
