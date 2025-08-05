@@ -362,7 +362,34 @@
             }
         }
         
-        @media (max-width: 768px) {
+                    .action-grid {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                gap: 2rem;
+                max-width: 1000px;
+                margin: 0 auto;
+                align-items: start;
+            }
+            
+            .action-grid .studio-highlight {
+                margin: 0;
+                padding: 2.5rem;
+            }
+            
+            .action-grid .card {
+                height: fit-content;
+            }
+            
+            @media (max-width: 768px) {
+                .action-grid {
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+                }
+                
+                .action-grid .studio-highlight {
+                    padding: 3rem 1.5rem;
+                }
+            }
             .hero {
                 padding: 6rem 0 4rem;
             }
@@ -509,18 +536,17 @@
 
     <div class="section">
         <div class="container">
-            <div class="studio-highlight" style="max-width: 500px; margin: 4rem auto;">
-                <h3>Broadcast-Quality Studio</h3>
-                <p>
-                    4K video, multi-input audio, and acoustic treatment for Bitcoin content creation. 
-                    Available to members and partners for interviews, technical discussions, 
-                    and educational content.
-                </p>
-                <a href="https://calendly.com/strategy-hub/30min" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Book studio time via Calendly">Book Studio Time</a>
-            </div>
-            
             <h2 class="section-title">Get Involved</h2>
-            <div style="max-width: 500px; margin: 0 auto;">
+            <div class="action-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; max-width: 1000px; margin: 0 auto;">
+                <div class="studio-highlight">
+                    <h3>Broadcast-Quality Studio</h3>
+                    <p>
+                        4K video, multi-input audio, and acoustic treatment for Bitcoin content creation. 
+                        Available to members and partners for interviews, technical discussions, 
+                        and educational content.
+                    </p>
+                    <a href="https://calendly.com/strategy-hub/30min" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Book studio time via Calendly">Book Studio Time</a>
+                </div>
                 <div class="card" style="text-align: center;">
                     <h3>Join StrategyHub</h3>
                     <p>Connect with Bitcoin developers, researchers, and builders working on meaningful projects.</p>
