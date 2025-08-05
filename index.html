@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StrategyHub - Building professional Bitcoin infrastructure, fostering technical collaboration, and creating spaces for serious Bitcoin strategy development and institutional engagement.">
+    <meta name="keywords" content="Bitcoin, Strategy, Infrastructure, Professional, Content Creation, Studio">
+    <meta name="author" content="StrategyHub">
+    <meta property="og:title" content="Hub₿ - Bitcoin Strategy & Infrastructure">
+    <meta property="og:description" content="Professional Bitcoin infrastructure and strategic collaboration spaces for serious Bitcoin development.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hub₿ - Bitcoin Strategy & Infrastructure">
+    <meta name="twitter:description" content="Professional Bitcoin infrastructure and strategic collaboration spaces.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>₿</text></svg>">
+    <title>Hub₿ - Bitcoin Strategy & Infrastructure</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0a0a;
+            overflow-x: hidden;
+        }
+        
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            color: #ffffff;
+            padding: 8rem 0 6rem;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(247, 147, 26, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(247, 147, 26, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #f7931a 0%, #ffb84d 50%, #f7931a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(247, 147, 26, 0.3);
+        }
+        
+        .bitcoin-symbol {
+            font-family: 'Times New Roman', serif;
+            font-size: 0.7em;
+            vertical-align: super;
+            position: relative;
+            top: -0.1em;
+            color: #f7931a !important;
+            -webkit-text-fill-color: #f7931a !important;
+            background: none !important;
+            text-shadow: none !important;
+        }
+        
+        /* Reduce animations on mobile and for users who prefer reduced motion */
+        @media (max-width: 768px), (prefers-reduced-motion: reduce) {
+            .studio-highlight::before {
+                animation: none;
+            }
+            
+            .card:hover {
+                transform: translateY(-4px);
+            }
+            
+            .btn:hover {
+                transform: translateY(-1px);
+            }
+        }
+        
+        .hero .tagline {
+            font-size: 1.5rem;
+            font-weight: 500;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+            color: #666666;
+        }
+        
+        .hero .mission {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            opacity: 0.7;
+            line-height: 1.7;
+            color: #555555;
+        }
+        
+        .section {
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .section:nth-child(even) {
+            background: #111111;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: #ffffff;
+            background: linear-gradient(135deg, #f7931a 0%, #ffb84d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(247, 147, 26, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(247, 147, 26, 0.05) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .card:hover::before {
+            opacity: 1;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(247, 147, 26, 0.4);
+            box-shadow: 0 20px 60px rgba(247, 147, 26, 0.15);
+        }
+        
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(247, 147, 26, 0.2);
+            border: 2px solid #f7931a;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            position: relative;
+            z-index: 2;
+            color: #f7931a;
+        }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .card p {
+            color: #b0b0b0;
+            line-height: 1.7;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .about {
+            background: #111111;
+            padding: 6rem 0;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #ffffff;
+            background: linear-gradient(135deg, #f7931a 0%, #ffb84d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .values {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .values li {
+            padding: 1rem 0;
+            font-weight: 600;
+            color: #f7931a;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(247, 147, 26, 0.1);
+        }
+        
+        .values li::before {
+            content: "₿ ";
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+        
+        .studio-highlight {
+            background: linear-gradient(135deg, rgba(247, 147, 26, 0.1) 0%, rgba(247, 147, 26, 0.05) 100%);
+            padding: 4rem;
+            border-radius: 24px;
+            margin: 4rem 0;
+            text-align: center;
+            border: 1px solid rgba(247, 147, 26, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .studio-highlight::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(247, 147, 26, 0.03) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .studio-highlight h3 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .studio-highlight p {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #f7931a 0%, #ffb84d 100%);
+            color: #000000;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 15px 40px rgba(247, 147, 26, 0.3);
+            position: relative;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(247, 147, 26, 0.4);
+            filter: brightness(1.1);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #f7931a;
+            color: #f7931a;
+            box-shadow: none;
+        }
+        
+        .btn-secondary:hover {
+            background: #f7931a;
+            color: #000000;
+            box-shadow: 0 15px 40px rgba(247, 147, 26, 0.3);
+        }
+        
+        .footer {
+            background: #000000;
+            color: #b0b0b0;
+            padding: 4rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(247, 147, 26, 0.1);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: #f7931a;
+            font-weight: 700;
+        }
+        
+        .footer a {
+            color: #b0b0b0;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .footer a:hover {
+            color: #f7931a;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 6rem 0 4rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .hero .mission {
+                font-size: 1.1rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .about {
+                padding: 4rem 0;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .studio-highlight {
+                padding: 3rem 1.5rem;
+            }
+            
+            .studio-highlight h3 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+            
+            .card {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="logo-container">
+                <img src="https://www.strategy.com/_next/image?url=https%3A%2F%2Fimages.contentstack.io%2Fv3%2Fassets%2Fbltf8d808d9b8cebd37%2Fbltdc9b7cba5ab9ec6a%2F67b9259aa34214b8802a6fd9%2Fhub_logo.png&w=1920&q=100" alt="StrategyHub Logo" class="logo-img">
+            </div>
+            <div class="tagline">Bitcoin Infrastructure Hub</div>
+            <div class="mission">
+                Building Bitcoin infrastructure, fostering technical collaboration, 
+                and creating spaces for serious Bitcoin development.
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">Our Focus</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">🏗️</div>
+                    <h3>Infrastructure</h3>
+                    <p>Maintaining high-quality tools and environments for Bitcoin development, content creation, and research.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🤝</div>
+                    <h3>Collaboration</h3>
+                    <p>Connecting Bitcoin developers, researchers, and builders working on meaningful projects.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Technical Resources</h3>
+                    <p>Access to development environments, testing tools, and content creation equipment.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Focused Work</h3>
+                    <p>Quiet spaces and dedicated time for deep Bitcoin development and research.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🛠️</div>
+                    <h3>Tools & Equipment</h3>
+                    <p>Broadcast-quality studio, development workstations, and specialized Bitcoin hardware.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h3>Research</h3>
+                    <p>Analysis of Bitcoin adoption trends, technical developments, and ecosystem growth.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About StrategyHub</h2>
+                    <p>
+                        StrategyHub emerged to build quality infrastructure for Bitcoin development 
+                        and technical collaboration. We focus on creating useful environments and tools 
+                        that enable good Bitcoin work.
+                    </p>
+                    <p>
+                        Our approach emphasizes building over talking - providing solid resources, workspace, 
+                        and collaborative environments that support Bitcoin development and research. We focus on the tools 
+                        and spaces that let others do their best work.
+                    </p>
+                </div>
+                <div class="about-values">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 2rem; color: #ffffff;">Our Principles</h3>
+                    <ul class="values">
+                        <li>Build Useful Things</li>
+                        <li>Enable Good Work</li>
+                        <li>Technical Excellence</li>
+                        <li>Collaborative Environment</li>
+                        <li>Long-term Thinking</li>
+                        <li>Open Source First</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <div class="studio-highlight">
+                <h3>Broadcast-Quality Studio</h3>
+                <p>
+                    4K video, multi-input audio, and acoustic treatment for Bitcoin content creation. 
+                    Available to members and partners for interviews, technical discussions, 
+                    and educational content.
+                </p>
+                <a href="https://calendly.com/strategy-hub/30min" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Book studio time via Calendly">Book Studio Time</a>
+            </div>
+            
+            <h2 class="section-title">Get Involved</h2>
+            <div style="max-width: 500px; margin: 0 auto;">
+                <div class="card" style="text-align: center;">
+                    <h3>Join StrategyHub</h3>
+                    <p>Connect with Bitcoin developers, researchers, and builders working on meaningful projects.</p>
+                    <br>
+                    <a href="https://www.strategy.com/hub/apply" class="btn-secondary btn" target="_blank" rel="noopener noreferrer" aria-label="Apply to join StrategyHub">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h4>StrategyHub</h4>
+                    <p style="color: #666; margin-top: 1rem; line-height: 1.6;">Building professional Bitcoin infrastructure and fostering strategic collaboration in the Bitcoin ecosystem.</p>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <a href="https://calendly.com/strategy-hub/30min" target="_blank" rel="noopener noreferrer" aria-label="Book studio time">Studio Booking</a>
+                    <a href="https://strategy.com/hub" target="_blank" rel="noopener noreferrer" aria-label="Visit main StrategyHub website">Main Website</a>
+                </div>
+            </div>
+            <p style="border-top: 1px solid #333; padding-top: 2rem; margin-top: 2rem; opacity: 0.6;">
+                © 2025 StrategyHub. Building Bitcoin infrastructure and community.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
