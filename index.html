@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -230,9 +231,8 @@
         
         .studio-highlight {
             background: linear-gradient(135deg, rgba(247, 147, 26, 0.1) 0%, rgba(247, 147, 26, 0.05) 100%);
-            padding: 4rem;
+            padding: 3rem;
             border-radius: 24px;
-            margin: 4rem 0;
             text-align: center;
             border: 1px solid rgba(247, 147, 26, 0.2);
             position: relative;
@@ -256,7 +256,7 @@
         }
         
         .studio-highlight h3 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
             color: #ffffff;
@@ -265,12 +265,9 @@
         }
         
         .studio-highlight p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #b0b0b0;
             margin-bottom: 2.5rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
             line-height: 1.7;
             position: relative;
             z-index: 2;
@@ -312,6 +309,15 @@
             box-shadow: 0 15px 40px rgba(247, 147, 26, 0.3);
         }
         
+        .action-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: start;
+        }
+        
         .footer {
             background: #000000;
             color: #b0b0b0;
@@ -347,49 +353,15 @@
             color: #f7931a;
         }
         
-        /* Reduce animations on mobile and for users who prefer reduced motion */
-        @media (max-width: 768px), (prefers-reduced-motion: reduce) {
-            .studio-highlight::before {
-                animation: none;
-            }
-            
-            .card:hover {
-                transform: translateY(-4px);
-            }
-            
-            .btn:hover {
-                transform: translateY(-1px);
+        /* Mobile and tablet responsive */
+        @media (max-width: 1024px) {
+            .action-row {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
         }
         
-                    .action-grid {
-                display: grid;
-                grid-template-columns: 2fr 1fr;
-                gap: 2rem;
-                max-width: 1000px;
-                margin: 0 auto;
-                align-items: start;
-            }
-            
-            .action-grid .studio-highlight {
-                margin: 0;
-                padding: 2.5rem;
-            }
-            
-            .action-grid .card {
-                height: fit-content;
-            }
-            
-            @media (max-width: 768px) {
-                .action-grid {
-                    grid-template-columns: 1fr;
-                    gap: 2rem;
-                }
-                
-                .action-grid .studio-highlight {
-                    padding: 3rem 1.5rem;
-                }
-            }
+        @media (max-width: 768px) {
             .hero {
                 padding: 6rem 0 4rem;
             }
@@ -433,7 +405,7 @@
             }
             
             .studio-highlight {
-                padding: 3rem 1.5rem;
+                padding: 2.5rem 1.5rem;
             }
             
             .studio-highlight h3 {
@@ -447,6 +419,18 @@
             
             .card {
                 padding: 2rem;
+            }
+            
+            .studio-highlight::before {
+                animation: none;
+            }
+            
+            .card:hover {
+                transform: translateY(-4px);
+            }
+            
+            .btn:hover {
+                transform: translateY(-1px);
             }
         }
     </style>
@@ -537,7 +521,7 @@
     <div class="section">
         <div class="container">
             <h2 class="section-title">Get Involved</h2>
-            <div class="action-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; max-width: 1000px; margin: 0 auto;">
+            <div class="action-row">
                 <div class="studio-highlight">
                     <h3>Broadcast-Quality Studio</h3>
                     <p>
@@ -567,7 +551,7 @@
                 <div>
                     <h4>Resources</h4>
                     <a href="https://calendly.com/strategy-hub/30min" target="_blank" rel="noopener noreferrer" aria-label="Book studio time">Studio Booking</a>
-                    <a href="https://strategy.com/hub" target="_blank" rel="noopener noreferrer" aria-label="Visit main StrategyHub website">Main Website</a>
+                    <a href="https://strategy.com/hub" target="_blank" rel="noopener noreferrer" aria-label="Visit main StrategyHub website">Explore StrategyHub</a>
                 </div>
             </div>
             <p style="border-top: 1px solid #333; padding-top: 2rem; margin-top: 2rem; opacity: 0.6;">
